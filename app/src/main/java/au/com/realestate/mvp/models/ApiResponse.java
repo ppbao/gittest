@@ -9,5 +9,3 @@ public class ApiResponse<T> {
     public List<T> responseObject;
     public List<Tram> southResponseObject=new ArrayList<Tram>();
 }
-
-
