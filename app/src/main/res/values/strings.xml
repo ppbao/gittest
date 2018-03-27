@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">HomeTime</string>
+
+    <string name="base_url">http://ws3.tramtracker.com.au</string>
+
+    <string name="home_north_text">North</string>
+    <string name="home_south_text">South</string>
+    <string name="home_refersh_text">Refersh</string>
+    <string name="home_clear_text">Clear</string>
+    <string name="item_destination_text">Destination:</string>
+    <string name="item_predictive_time_text">Predictive Time:</string>
+
+</resources>

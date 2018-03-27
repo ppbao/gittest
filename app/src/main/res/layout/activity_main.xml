@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context="au.com.realestate.modules.hometime.MainActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        style="@style/MatchMatch"
+        android:layout_above="@+id/buttonPanel">
+
+
+        <LinearLayout
+            style="@style/linearLayoutVerticle"
+            android:layout_above="@+id/buttonPanel">
+
+            <TextView
+                style="@style/headerText"
+                android:text="@string/home_north_text" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/northListView"
+                style="@style/recyclerView" />
+
+            <TextView
+                style="@style/headerText"
+                android:text="@string/home_south_text" />
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/southListView"
+                style="@style/recyclerView" />
+
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <LinearLayout
+        android:id="@+id/buttonPanel"
+        style="@style/mainactivity_bottomlayout">
+
+        <Button
+            android:id="@+id/clearButton"
+            style="@style/button"
+            android:onClick="clearClick"
+            android:text="@string/home_clear_text" />
+
+        <LinearLayout style="@style/layoutSeperator"></LinearLayout>
+
+        <Button
+            android:id="@+id/refreshButton"
+            style="@style/button"
+            android:onClick="refreshClick"
+            android:text="@string/home_refersh_text" />
+    </LinearLayout>
+
+</RelativeLayout>
+

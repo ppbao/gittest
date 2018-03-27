@@ -1,0 +1,71 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "au.com.realestate.modules.hometime"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.3.1'
+
+
+    compile 'com.android.support:recyclerview-v7:25.3.1'
+    compile 'com.android.support:cardview-v7:25.3.1'
+
+    //Retrofit
+    compile "com.squareup.retrofit2:retrofit:$retrofit_version"
+    compile "com.squareup.retrofit2:converter-gson:$retrofit_version"
+    compile "com.squareup.retrofit2:adapter-rxjava:$retrofit_version"
+    provided 'org.glassfish:javax.annotation:10.0-b28'
+
+    //RxJava
+    compile 'io.reactivex:rxjava:1.0.4'
+    compile 'io.reactivex:rxandroid:0.24.0'
+
+    //Glide
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+
+    //Dagger
+    annotationProcessor "com.google.dagger:dagger-compiler:$dagger_version"
+    provided "com.google.dagger:dagger-compiler:$dagger_version"
+    compile "com.google.dagger:dagger:$dagger_version"
+
+    //Butterknife
+    compile "com.jakewharton:butterknife:$butterknife_version"
+    annotationProcessor "com.jakewharton:butterknife-compiler:$butterknife_version"
+
+    //Gson
+    compile 'com.google.code.gson:gson:2.6.2'
+
+
+    testCompile 'junit:junit:4.12'
+}
+
+buildscript {
+    ext.retrofit_version = '2.2.0'
+    ext.dagger_version = '2.5'
+    ext.butterknife_version = '8.5.1'
+}
